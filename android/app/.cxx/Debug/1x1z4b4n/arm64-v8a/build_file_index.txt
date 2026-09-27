@@ -1,0 +1,5 @@
+C:\Users\himan\CampusFixRN\node_modules\@react-native-firebase\app\android\src\reactnative\java\io\invertase\firebase\app\generated\jni\CMakeLists.txt
+C:\Users\himan\CampusFixRN\node_modules\@react-native-firebase\auth\android\src\main\java\io\invertase\firebase\auth\generated\jni\CMakeLists.txt
+C:\Users\himan\CampusFixRN\node_modules\@react-native-firebase\firestore\android\src\reactnative\java\io\invertase\firebase\firestore\generated\jni\CMakeLists.txt
+C:\Users\himan\CampusFixRN\node_modules\react-native-safe-area-context\android\src\main\jni\CMakeLists.txt
+C:\Users\himan\CampusFixRN\node_modules\react-native\ReactAndroid\cmake-utils\default-app-setup\CMakeLists.txt

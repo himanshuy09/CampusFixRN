@@ -1,0 +1,15 @@
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/armeabi-v7a/CMakeFiles/appmodules.dir
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/armeabi-v7a/RNFBAppTurboModules_autolinked_build/CMakeFiles/react_codegen_RNFBAppTurboModules.dir
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/armeabi-v7a/RNFBAppTurboModules_autolinked_build/CMakeFiles/edit_cache.dir
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/armeabi-v7a/RNFBAppTurboModules_autolinked_build/CMakeFiles/rebuild_cache.dir
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/armeabi-v7a/RNFBAuthTurboModules_autolinked_build/CMakeFiles/react_codegen_RNFBAuthTurboModules.dir
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/armeabi-v7a/RNFBAuthTurboModules_autolinked_build/CMakeFiles/edit_cache.dir
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/armeabi-v7a/RNFBAuthTurboModules_autolinked_build/CMakeFiles/rebuild_cache.dir
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/armeabi-v7a/RNFBFirestoreTurboModules_autolinked_build/CMakeFiles/react_codegen_RNFBFirestoreTurboModules.dir
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/armeabi-v7a/RNFBFirestoreTurboModules_autolinked_build/CMakeFiles/edit_cache.dir
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/armeabi-v7a/RNFBFirestoreTurboModules_autolinked_build/CMakeFiles/rebuild_cache.dir
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/armeabi-v7a/safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/armeabi-v7a/safeareacontext_autolinked_build/CMakeFiles/edit_cache.dir
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/armeabi-v7a/safeareacontext_autolinked_build/CMakeFiles/rebuild_cache.dir

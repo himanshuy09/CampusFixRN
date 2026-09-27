@@ -1,0 +1,4 @@
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/x86/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/x86/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/x86/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/edit_cache.dir
+C:/Users/himan/CampusFixRN/android/app/.cxx/Debug/1x1z4b4n/x86/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/rebuild_cache.dir

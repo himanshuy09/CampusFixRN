@@ -1,0 +1,3 @@
+C:\Users\himan\CampusFixRN\android\app\.cxx\RelWithDebInfo\m3x123b3\arm64-v8a\RNFBAppTurboModules_autolinked_build\CMakeFiles\react_codegen_RNFBAppTurboModules.dir\RNFBAppTurboModules-generated.cpp.o
+C:\Users\himan\CampusFixRN\android\app\.cxx\RelWithDebInfo\m3x123b3\arm64-v8a\RNFBAuthTurboModules_autolinked_build\CMakeFiles\react_codegen_RNFBAuthTurboModules.dir\RNFBAuthTurboModules-generated.cpp.o
+C:\Users\himan\CampusFixRN\android\app\.cxx\RelWithDebInfo\m3x123b3\arm64-v8a\RNFBFirestoreTurboModules_autolinked_build\CMakeFiles\react_codegen_RNFBFirestoreTurboModules.dir\RNFBFirestoreTurboModules-generated.cpp.o
