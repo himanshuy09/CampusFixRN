@@ -55,6 +55,9 @@ const App = () => {
   // Show the animated CampusFix splash before the main app.
   const [showSplash, setShowSplash] = useState(true);
 
+  // Firebase session restoration must finish before auth screens are shown.
+  const [sessionReady, setSessionReady] = useState(false);
+
   // ============================================================
   // SCREEN
   // ============================================================
@@ -167,11 +170,109 @@ const App = () => {
     'dashboard' | 'complaints' | 'complaintDetails' | 'notifications' | 'profile'
   >('dashboard');
 
-  // Android Back Navigation
+  // ============================================================
+  // RESTORE FIREBASE LOGIN SESSION
+  // ============================================================
+  // Firebase Auth persists the signed-in account across normal app
+  // restarts. We use auth.currentUser, then users/{uid}, and never
+  // use a locally stored role/session value as authentication.
   useEffect(() => {
-    const onBackPress = () => {
+    let mounted = true;
+
+    const restoreSession = async () => {
+      try {
+        const currentUser = auth.currentUser;
+
+        if (!currentUser) {
+          if (mounted) {
+            setLoggedIn(false);
+            setUserRole('');
+            setUserName('');
+            setUserCollegeId('');
+            setScreen('welcome');
+            setSessionReady(true);
+          }
+          return;
+        }
+
+        const userSnapshot = await getDoc(
+          doc(firestore, 'users', currentUser.uid),
+        );
+
+        if (!mounted) {
+          return;
+        }
+
+        if (!userSnapshot.exists()) {
+          await logoutUser();
+          setLoggedIn(false);
+          setUserRole('');
+          setUserName('');
+          setUserCollegeId('');
+          setScreen('welcome');
+          setSessionReady(true);
+          return;
+        }
+
+        const data = userSnapshot.data() as any;
+        const role = String(data?.role || '').toLowerCase();
+
+        if (role !== 'student' && role !== 'admin') {
+          await logoutUser();
+          setLoggedIn(false);
+          setUserRole('');
+          setUserName('');
+          setUserCollegeId('');
+          setScreen('welcome');
+          setSessionReady(true);
+          return;
+        }
+
+        setUserRole(role);
+        setUserName(String(data?.name || ''));
+        setUserCollegeId(String(data?.collegeId || ''));
+        setLoggedIn(true);
+
+        // A restored session always opens at its account dashboard.
+        setStudentPage('dashboard');
+        setAdminPage('dashboard');
+        setSelectedComplaint(null);
+        setSessionReady(true);
+      } catch (error) {
+        console.error('Firebase session restore error:', error);
+
+        if (mounted) {
+          setLoggedIn(false);
+          setUserRole('');
+          setUserName('');
+          setUserCollegeId('');
+          setScreen('welcome');
+          setSessionReady(true);
+        }
+      }
+    };
+
+    restoreSession();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  // ============================================================
+  // ANDROID BACK NAVIGATION
+  // ============================================================
+  // One BackHandler only. Internal pages go back to their parent.
+  // Dashboard is the logged-in root, so Android Back exits the app
+  // without logging the Firebase user out or showing the login screen.
+  useEffect(() => {
+    const handleBackPress = () => {
       if (!loggedIn) {
-        if (screen === 'signin' || screen === 'signup' || screen === 'admin') {
+        if (
+          screen === 'signin' ||
+          screen === 'signup' ||
+          screen === 'admin'
+        ) {
           setScreen('welcome');
           return true;
         }
@@ -182,9 +283,13 @@ const App = () => {
           return true;
         }
 
+        // Welcome is the unauthenticated root.
         return false;
       }
 
+      // ----------------------------------------------------------
+      // STUDENT
+      // ----------------------------------------------------------
       if (userRole.toLowerCase() === 'student') {
         if (studentPage === 'complaintDetails') {
           setStudentPage('complaints');
@@ -201,30 +306,32 @@ const App = () => {
           return true;
         }
 
-        if (studentPage === 'report' || studentPage === 'complaints') {
+        if (
+          studentPage === 'report' ||
+          studentPage === 'complaints'
+        ) {
           setStudentPage('dashboard');
           return true;
         }
 
-        // Dashboard is the logged-in root.
-        // Going back logs the user out and returns to Welcome.
-        logout();
-        return true;
+        // Student Dashboard is the logged-in root.
+        // Returning false lets Android close/exit the app.
+        return false;
       }
 
-      // Admin navigation: Notifications -> Dashboard.
+      // ----------------------------------------------------------
+      // ADMIN
+      // ----------------------------------------------------------
       if (adminPage === 'notifications') {
         setAdminPage('dashboard');
         return true;
       }
 
-      // Admin navigation: Profile -> Dashboard.
       if (adminPage === 'profile') {
         setAdminPage('dashboard');
         return true;
       }
 
-      // Admin navigation: Details -> Complaints -> Dashboard -> Welcome.
       if (adminPage === 'complaintDetails') {
         setAdminPage('complaints');
         return true;
@@ -235,94 +342,8 @@ const App = () => {
         return true;
       }
 
-      // Admin dashboard is the logged-in root.
-      logout();
-      return true;
-    };
-
-    const subscription = BackHandler.addEventListener(
-      'hardwareBackPress',
-      onBackPress,
-    );
-
-    return () => subscription.remove();
-  }, [loggedIn, screen, forgotForAdmin, studentPage, userRole, adminPage]);
-
-  // ============================================================
-  // ANDROID BACK NAVIGATION
-  // ============================================================
-
-  useEffect(() => {
-    const handleBackPress = () => {
-      // Logged-in student: Report Complaint -> Dashboard
-      if (loggedIn && userRole.toLowerCase() === 'student') {
-        if (studentPage === 'complaintDetails') {
-          setStudentPage('complaints');
-          return true;
-        }
-
-        if (studentPage === 'notifications') {
-          setStudentPage('dashboard');
-          return true;
-        }
-
-        if (studentPage === 'profile') {
-          setStudentPage('dashboard');
-          return true;
-        }
-
-        if (studentPage === 'report' || studentPage === 'complaints') {
-          setStudentPage('dashboard');
-          return true;
-        }
-
-        // Dashboard is the root of the student app.
-        // Returning false lets Android handle the normal exit behavior.
-        return false;
-      }
-
-      // Logged-in admin: Notifications -> Dashboard.
-      if (loggedIn && userRole.toLowerCase() !== 'student') {
-        if (adminPage === 'notifications') {
-          setAdminPage('dashboard');
-          return true;
-        }
-
-        if (adminPage === 'profile') {
-          setAdminPage('dashboard');
-          return true;
-        }
-
-        if (adminPage === 'complaintDetails') {
-          setAdminPage('complaints');
-          return true;
-        }
-
-        if (adminPage === 'complaints') {
-          setAdminPage('dashboard');
-          return true;
-        }
-
-        // Admin dashboard is the root; let the first back handler
-        // perform logout so the user returns to Welcome.
-        return false;
-      }
-
-      // Auth screens -> Welcome screen
-      if (!loggedIn) {
-        if (screen === 'signin' || screen === 'signup' || screen === 'admin') {
-          setScreen('welcome');
-          return true;
-        }
-
-        if (screen === 'forgot') {
-          setResetSent(false);
-          setScreen(forgotForAdmin ? 'admin' : 'signin');
-          return true;
-        }
-      }
-
-      // Welcome screen / unknown root: use Android default behavior.
+      // Admin Dashboard is the logged-in root.
+      // Returning false lets Android close/exit the app.
       return false;
     };
 
@@ -334,10 +355,10 @@ const App = () => {
     return () => subscription.remove();
   }, [
     loggedIn,
-    userRole,
-    studentPage,
     screen,
     forgotForAdmin,
+    studentPage,
+    userRole,
     adminPage,
   ]);
 
@@ -692,7 +713,7 @@ const App = () => {
   // ANIMATED APP SPLASH
   // ============================================================
 
-  if (showSplash) {
+  if (showSplash || !sessionReady) {
     return (
       <SplashScreen
         onFinish={() => setShowSplash(false)}

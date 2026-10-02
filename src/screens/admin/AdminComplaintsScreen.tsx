@@ -473,7 +473,7 @@ const styles = StyleSheet.create({
   header: {
     minHeight: 88,
     paddingHorizontal: 18,
-    paddingTop: 15,
+    paddingTop: 44,
     paddingBottom: 10,
     flexDirection: 'row',
     alignItems: 'center',
@@ -510,7 +510,7 @@ const styles = StyleSheet.create({
   },
 
   headerSubtitle: {
-    marginTop: 3,
+    marginTop: 8,
     fontSize: 12,
     color: '#6B7280',
   },

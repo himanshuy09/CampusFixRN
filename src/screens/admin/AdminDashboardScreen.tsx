@@ -586,7 +586,7 @@ const styles = StyleSheet.create({
     zIndex: 30,
     minHeight: 88,
     paddingHorizontal: 18,
-    paddingTop: 16,
+    paddingTop: 48,
     paddingBottom: 11,
     flexDirection: 'row',
     alignItems: 'center',
@@ -950,7 +950,7 @@ const styles = StyleSheet.create({
     bottom: 78,
     width: 190,
     paddingVertical: 8,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#23b31bf2',
     borderRadius: 18,
     borderWidth: 1,
     borderColor: '#E5E7EB',
@@ -986,7 +986,7 @@ const styles = StyleSheet.create({
   profileMenuText: {
     fontSize: 13,
     fontWeight: '700',
-    color: '#374151',
+    color: '#eff0f1',
   },
 
   profileMenuDivider: {
@@ -999,7 +999,7 @@ const styles = StyleSheet.create({
   profileMenuLogoutText: {
     fontSize: 13,
     fontWeight: '700',
-    color: '#DC2626',
+    color: '#af0c0c',
   },
 
 

@@ -328,7 +328,7 @@ const MyComplaintsScreen = ({onBack, onComplaintPress}: Props) => {
 const styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: '#F7F9FC'},
   header: {
-    paddingTop: 16,
+    paddingTop: 48,
     paddingHorizontal: 18,
     paddingBottom: 16,
     backgroundColor: '#FFFFFF',

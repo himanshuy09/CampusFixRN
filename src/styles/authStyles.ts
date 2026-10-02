@@ -110,16 +110,17 @@ export const authStyles = StyleSheet.create({
   // BACK BUTTON
   // ==================================================
   backButton: {
-    alignSelf: 'flex-start',
-    width: 42,
-    height: 42,
-    borderRadius: 13,
-    backgroundColor: '#FFFFFF',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 15,
-    elevation: 2,
-  },
+  alignSelf: 'flex-start',
+  width: 42,
+  height: 42,
+  borderRadius: 13,
+  backgroundColor: '#FFFFFF',
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginTop: 15,
+  marginBottom: 15,
+  elevation: 2,
+},
   backButtonText: {
     fontSize: 30,
     color: '#1E293B',

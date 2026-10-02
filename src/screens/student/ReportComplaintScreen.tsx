@@ -685,14 +685,14 @@ const styles = StyleSheet.create({
   // ==========================================================
 
   appBar: {
-    height: 64,
-    backgroundColor: '#FFFFFF',
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#E5E7EB',
-  },
+  height: 110,
+  backgroundColor: '#FFFFFF',
+  flexDirection: 'row',
+  alignItems: 'center',
+  paddingHorizontal: 16,
+  borderBottomWidth: 1,
+  borderBottomColor: '#E5E7EB',
+},
 
   backButton: {
     width: 42,
@@ -717,7 +717,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '800',
     color: '#111827',
-    marginRight: 42,
+    marginRight: 50,
   },
 
   appBarSpacer: {
