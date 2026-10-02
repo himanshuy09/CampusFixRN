@@ -15,8 +15,6 @@
   <img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=flat-square&logo=android&logoColor=white" />
 </p>
 
-<br/>
-
 ### 🚀 Report. Track. Resolve.
 
 </div>
@@ -58,86 +56,97 @@ Instead of depending on manual complaint registers or informal communication, st
                         │
                         ▼
                 🔔 Student Notification
-
                         │
                         ▼
                  ✅ Complaint Resolved
+```
 
-🌟 Key Features
-👨‍🎓 Student Portal
-Feature	Description
-🔐 Sign In / Sign Up	Secure Firebase Authentication
-🏫 College Selection	Select campus during registration
-🔑 Forgot Password	Reset password through Firebase
-📝 Report Complaint	Submit campus issues digitally
-📊 Track Complaints	View complaint status and details
-🔔 Notifications	Receive complaint updates
-👤 Profile	Manage student account
-🔄 Password Reset	Change account password
-🗑️ Delete Account	Permanently delete student account
-👨‍💼 Admin Portal
-Feature	Description
-🔐 Admin Login	Dedicated administrator authentication
-📊 Dashboard	Complaint statistics and overview
-🏫 College Management	College-wise complaint access
-🔎 Search	Search complaints quickly
-🎯 Status Filters	Filter by complaint status
-📄 Complaint Details	View complete complaint information
-🏢 Department Assignment	Assign complaints to departments
-🔄 Status Updates	Update complaint progress
-🗑️ Complaint Deletion	Delete complaints when required
-🔔 Notifications	Receive new complaint alerts
-👤 Admin Profile	Manage administrator account
-🔑 Password Reset	Reset administrator password
-🎨 UI Highlights
+---
+
+# 🌟 Key Features
+
+## 👨‍🎓 Student Portal
+
+| Feature | Description |
+|--------|-------------|
+| 🔐 Sign In / Sign Up | Secure Firebase Authentication |
+| 🏫 College Selection | Select campus during registration |
+| 🔑 Forgot Password | Reset password through Firebase |
+| 📝 Report Complaint | Submit campus issues digitally |
+| 📊 Track Complaints | View complaint status and details |
+| 🔔 Notifications | Receive complaint updates |
+| 👤 Profile | Manage student account |
+| 🔄 Password Reset | Change account password |
+| 🗑️ Delete Account | Permanently delete student account |
+
+## 👨‍💼 Admin Portal
+
+| Feature | Description |
+|--------|-------------|
+| 🔐 Admin Login | Dedicated administrator authentication |
+| 📊 Dashboard | Complaint statistics and overview |
+| 🏫 College Management | College-wise complaint access |
+| 🔎 Search | Search complaints quickly |
+| 🎯 Status Filters | Filter by complaint status |
+| 📄 Complaint Details | View complete complaint information |
+| 🏢 Department Assignment | Assign complaints to departments |
+| 🔄 Status Updates | Update complaint progress |
+| 🗑️ Complaint Deletion | Delete complaints when required |
+| 🔔 Notifications | Receive new complaint alerts |
+| 👤 Admin Profile | Manage administrator account |
+| 🔑 Password Reset | Reset administrator password |
+
+---
+
+# 🎨 UI Highlights
 
 CampusFix uses a modern mobile-first interface with:
 
-✨ Animated startup screen
-🎨 Clean and modern UI
-📱 Responsive React Native layouts
-🔵 CampusFix branding
-🧭 Simple navigation
-🔔 Notification indicators
-📊 Dashboard statistics
-🃏 Modern complaint cards
-🔽 Interactive dropdowns
-🔄 Loading and refresh states
-⚡ Smooth user experience
-🛠️ Tech Stack
-<div align="center">
-Technology	Purpose
-⚛️ React Native	Mobile application framework
-🔷 TypeScript	Type-safe development
-🔥 Firebase Authentication	User authentication
-☁️ Cloud Firestore	Database
-🔥 React Native Firebase	Firebase integration
-🤖 Android	Mobile platform
-⚙️ Gradle	Android build system
-🚇 Metro	JavaScript bundler
-</div>
-🏗️ Project Architecture
+- ✨ Animated startup screen
+- 🎨 Clean and modern UI
+- 📱 Responsive React Native layouts
+- 🔵 CampusFix branding
+- 🧭 Simple navigation
+- 🔔 Notification indicators
+- 📊 Dashboard statistics
+- 🃏 Modern complaint cards
+- 🔽 Interactive dropdowns
+- 🔄 Loading and refresh states
+- ⚡ Smooth user experience
+
+---
+
+# 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| ⚛️ React Native | Mobile application framework |
+| 🔷 TypeScript | Type-safe development |
+| 🔥 Firebase Authentication | User authentication |
+| ☁️ Cloud Firestore | Database |
+| 🔥 React Native Firebase | Firebase integration |
+| 🤖 Android | Mobile platform |
+| ⚙️ Gradle | Android build system |
+| 🚇 Metro | JavaScript bundler |
+
+---
+
+# 🏗️ Project Architecture
+
+```text
 CampusFixRN/
 │
 ├── 📱 android/
-│
 ├── 📂 src/
-│   │
 │   ├── 🧩 components/
-│   │
 │   ├── 📌 constants/
-│   │
 │   ├── 🔥 firebase/
-│   │
 │   ├── 🖥️ screens/
 │   │   ├── 🔐 auth/
 │   │   ├── 👨‍🎓 student/
 │   │   └── 👨‍💼 admin/
-│   │
 │   ├── ⚙️ services/
-│   │
 │   ├── 📦 types/
-│   │
 │   └── 🛠️ utils/
 │
 ├── 📄 App.tsx
@@ -145,23 +154,29 @@ CampusFixRN/
 ├── 🔷 tsconfig.json
 ├── 📖 README.md
 └── 🚫 .gitignore
-🔥 Firebase Architecture
+```
 
-CampusFix uses Firebase Authentication + Cloud Firestore.
+---
 
-📚 Firestore Collections
+# 🔥 Firebase Architecture
+
+CampusFix uses **Firebase Authentication + Cloud Firestore**.
+
+### 📚 Firestore Collections
+
+```text
 🔥 Firebase
 │
 ├── 👤 users
-│
 ├── 🏫 colleges
-│
 ├── 📝 complaints
-│
 ├── 🔔 notifications
-│
 └── 👨‍💼 admin_notifications
-🔄 Complaint Lifecycle
+```
+
+### 🔄 Complaint Lifecycle
+
+```text
 📝 Submitted
       ↓
 📨 Admin Notified
@@ -175,12 +190,22 @@ CampusFix uses Firebase Authentication + Cloud Firestore.
 ✅ Resolved
       ↓
 🔔 Student Notified
-📊 Complaint Status
+```
+
+---
+
+# 📊 Complaint Status
+
+```text
 🟡 Submitted
 🔵 Assigned
 🟠 In Progress
 🟢 Resolved
-🗂️ Complaint Categories
+```
+
+# 🗂️ Complaint Categories
+
+```text
 ⚡ Electricity
 💧 Water Supply
 🧹 Cleanliness
@@ -190,59 +215,103 @@ CampusFix uses Firebase Authentication + Cloud Firestore.
 🚻 Washroom
 🛡️ Security
 📌 Other
-🚦 Priority Levels
-Priority	Meaning
-🟢 Low	Normal issue
-🟡 Medium	Requires attention
-🔴 High	Requires urgent attention
-🏫 Supported Colleges
-College	College ID
-🏫 ABC College	001
-🏫 XYZ College	002
-🏫 Inmantec Institutions	0845
-🚀 Installation
-1️⃣ Clone Repository
+```
+
+# 🚦 Priority Levels
+
+| Priority | Meaning |
+|---|---|
+| 🟢 Low | Normal issue |
+| 🟡 Medium | Requires attention |
+| 🔴 High | Requires urgent attention |
+
+# 🏫 Supported Colleges
+
+| College | College ID |
+|---|:---:|
+| 🏫 ABC College | `001` |
+| 🏫 XYZ College | `002` |
+| 🏫 Inmantec Institutions | `0845` |
+
+---
+
+# 🚀 Installation
+
+## 1️⃣ Clone Repository
+
+```bash
 git clone https://github.com/YOUR_USERNAME/CampusFixRN.git
 cd CampusFixRN
-2️⃣ Install Dependencies
+```
+
+## 2️⃣ Install Dependencies
+
+```bash
 npm install
-3️⃣ Firebase Configuration
+```
 
-Add your Firebase Android configuration file:
+## 3️⃣ Firebase Configuration
 
+Add your Firebase Android configuration file locally:
+
+```text
 android/app/google-services.json
+```
 
-🔐 Security: google-services.json should not be committed to a public repository.
+> 🔐 **Security:** `google-services.json` should not be committed to a public repository.
 
-4️⃣ Start Metro
+## 4️⃣ Start Metro
+
+```bash
 npx react-native start
-5️⃣ Run Android
+```
+
+## 5️⃣ Run Android
 
 Open another terminal:
 
+```bash
 npx react-native run-android
-🧪 TypeScript Check
+```
 
-Run the following command to check TypeScript errors:
+---
 
+# 🧪 TypeScript Check
+
+```bash
 npx tsc --noEmit
-📦 Build Release APK
+```
+
+---
+
+# 📦 Build Release APK
+
+```powershell
 cd android
 .\gradlew assembleRelease
+```
 
-APK will be generated at:
+APK:
 
+```text
 android/app/build/outputs/apk/release/app-release.apk
-🔐 Security
+```
+
+---
+
+# 🔐 Security
 
 CampusFix uses:
 
-🔥 Firebase Authentication
-☁️ Cloud Firestore
-🛡️ Firestore Security Rules
-🔒 User-specific access control
-👨‍💼 College-based admin access
-Important Security Rules
+- 🔥 Firebase Authentication
+- ☁️ Cloud Firestore
+- 🛡️ Firestore Security Rules
+- 🔒 User-specific access control
+- 👨‍💼 College-based admin access
+
+### Important Security Rules
+
+```text
 👤 Users
    └── Users can create/update their own profile
 
@@ -260,79 +329,103 @@ Important Security Rules
 
 🏫 Colleges
    └── College data is read-only
+```
 
-⚠️ Never commit passwords, private service-account credentials, API secrets, or Android signing keys.
+> ⚠️ Never commit passwords, private service-account credentials, API secrets, or Android signing keys.
 
-🎨 Branding
+---
+
+# 🎨 Branding
 
 CampusFix uses a dedicated visual identity:
 
+```text
        🎓
     CampusFix
 
 Campus Complaint
 Management System
-UI Elements
-🔵 CampusFix logo
-✨ Animated startup screen
-📱 Custom Android launcher icon
-🎨 Consistent application branding
-🧭 Modern navigation experience
-🎯 Project Objective
+```
 
-CampusFix aims to provide a centralized digital platform for reporting, tracking and managing campus complaints.
+### UI Elements
+
+- 🔵 CampusFix logo
+- ✨ Animated startup screen
+- 📱 Custom Android launcher icon
+- 🎨 Consistent application branding
+- 🧭 Modern navigation experience
+
+---
+
+# 🎯 Project Objective
+
+CampusFix provides a **centralized digital platform** for reporting, tracking and managing campus complaints.
 
 The system reduces dependency on:
 
+```text
 ❌ Manual Complaint Registers
 ❌ Paper-Based Tracking
 ❌ Informal Communication
 ❌ Unorganized Follow-ups
+```
 
 and provides:
 
+```text
 ✅ Digital Complaint Submission
 ✅ Real-Time Complaint Tracking
 ✅ Centralized Management
 ✅ Department Assignment
 ✅ Status Updates
 ✅ Notifications
-🔮 Future Enhancements
+```
 
-The project can be extended with:
+---
 
-🔔 Push Notifications
-📎 Complaint Image / Document Attachments
-📊 Advanced Analytics & Reports
-🚨 Complaint Escalation
-📧 Email Notifications
-🌐 Web-Based Admin Panel
-🏫 Multi-College Deployment
-🌙 Dark Mode
-👨‍💻 Developer
+# 🔮 Future Enhancements
+
+- 🔔 Push Notifications
+- 📎 Complaint Image / Document Attachments
+- 📊 Advanced Analytics & Reports
+- 🚨 Complaint Escalation
+- 📧 Email Notifications
+- 🌐 Web-Based Admin Panel
+- 🏫 Multi-College Deployment
+- 🌙 Dark Mode
+
+---
+
+# 👨‍💻 Developer
+
 <div align="center">
-Himanshu Yadav
 
-BCA Student • Developer • Tech Enthusiast
+## Himanshu Yadav
 
-💻 Building practical applications
-🚀 Exploring modern technologies
+**BCA Student • Developer • Tech Enthusiast**
+
+💻 Building practical applications  
+🚀 Exploring modern technologies  
 🎓 Academic Project — CampusFix
 
 </div>
-📄 License
 
-This project was developed as an academic / college project.
+---
+
+# 📄 License
+
+This project was developed as an **academic / college project**.
+
+---
 
 <div align="center">
-📱 CampusFix
 
-Campus Complaint Management System
+### 📱 CampusFix
 
-Report it. Track it. Resolve it.
+**Campus Complaint Management System**
 
-<br/>
+> _Report it. Track it. Resolve it._
 
-⭐ If you find this project useful, consider giving the repository a star!
+⭐ **If you find this project useful, consider giving the repository a star!**
 
-</div> ```
+</div>
