@@ -11,6 +11,7 @@ android/build/
 android/app/build/
 android/.cxx/
 android/local.properties
+android/app/google-services.json
 
 # IDE
 .idea/
